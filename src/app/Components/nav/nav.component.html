@@ -1,0 +1,39 @@
+<nav class="container mx-auto p-6">
+    <div class="flex items-center justify-between">
+        <div class="Logo">
+            <a href="#"><img class="w-40" src="./assets/images.png" alt="Logo"></a>
+        </div>
+        <div class="hidden md:flex gap-6 items-center">
+            <a href="#" class="text-slate-900  transition-all hover:text-slate-500">Portfolio</a>
+            <a href="#" class="text-slate-900  transition-all hover:text-slate-500">About</a>
+            <a href="#" class="text-slate-900  transition-all hover:text-slate-500">Social</a>
+            <a href="#" class="text-slate-900  transition-all hover:text-slate-500">Contact</a>
+            <a href="#" class="bg-orange-500 text-white hover:text-black  transition-all py-2 px-6 rounded-full hover:bg-orange-300">Call Me</a>
+        </div>
+        @if(!navIsClicked)
+        {
+            <button class="md:hidden" (click)="MenuOpen()">
+            <i class="ri-menu-line text-3xl"></i>
+            </button>
+        }
+        @else if(navIsClicked)
+        {
+            <button class="md:hidden" (click)="MenuClose()">
+            <i class="ri-menu-line text-3xl"></i>
+            </button>
+        }
+    </div>
+
+     @if(navIsClicked)
+     {
+        <div class="md-hidden">
+            <div class="absolute flex-col items-center space-y-4 font-bold bg-gray-50 drop-shadow-lg border-gray-300 py-8 left-6 right-6 flex">
+                <a href="#" class="text-slate-900  transition-all hover:text-slate-500">Portfolio</a>
+                <a href="#" class="text-slate-900  transition-all hover:text-slate-500">About</a>
+                <a href="#" class="text-slate-900  transition-all hover:text-slate-500">Social</a>
+                <a href="#" class="text-slate-900  transition-all hover:text-slate-500">Contact</a>
+                <a href="#" class="bg-orange-500 text-white hover:text-black  transition-all py-2 px-6 rounded-full hover:bg-orange-300">Call Me</a>
+            </div>
+        </div>
+     }
+</nav>
